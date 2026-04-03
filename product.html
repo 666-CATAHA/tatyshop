@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Товар</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://vk.ru/js/api/openapi.js?168"></script>
+  <script>
+    VK.init({ apiId: 54522333, onlyWidgets: true });
+  </script>
+</head>
+
+<body class="bg-neutral-950 text-white">
+
+<header class="p-4 border-b border-neutral-800">
+  <a href="catalog.html">← Назад</a>
+</header>
+
+<main class="max-w-5xl mx-auto p-6">
+
+  <div class="grid md:grid-cols-2 gap-8">
+
+    <img src="https://via.placeholder.com/400" class="rounded-2xl">
+
+    <div>
+      <h1 class="text-2xl mb-2">Тату #1</h1>
+      <p class="text-neutral-400 mb-4">Описание товара</p>
+
+      <div class="text-xl mb-4">100 TON</div>
+
+      <button class="bg-blue-600 px-6 py-3 rounded-xl">
+        Купить
+      </button>
+    </div>
+
+  </div>
+
+  <!-- COMMENTS -->
+  <div class="mt-10">
+    <h2 class="mb-4">Отзывы</h2>
+    <div id="vk_comments"></div>
+  </div>
+
+  <script>
+    VK.Widgets.Comments("vk_comments", {limit: 20, attach: "*"});
+  </script>
+
+</main>
+
+</body>
+</html>
