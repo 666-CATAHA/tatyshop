@@ -5,7 +5,6 @@
   <title>TaTyshop</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- VK -->
   <script src="https://vk.ru/js/api/openapi.js?168"></script>
   <script>
     VK.init({ apiId: 54522333, onlyWidgets: true });
@@ -14,85 +13,43 @@
 
 <body class="bg-neutral-950 text-white">
 
-  <!-- HEADER -->
-  <header class="flex justify-between items-center p-4 border-b border-neutral-800">
-    <h1 class="text-2xl font-bold">TaTyshop</h1>
+<header class="flex justify-between p-4 border-b border-neutral-800">
+  <h1 class="text-2xl font-bold">TaTyshop</h1>
+  <a href="catalog.html" class="bg-blue-600 px-4 py-2 rounded-xl">Каталог</a>
+</header>
 
-    <div class="flex gap-4">
-      <button class="bg-neutral-800 px-4 py-2 rounded-xl">Войти</button>
-      <button class="bg-blue-600 px-4 py-2 rounded-xl">Корзина</button>
-    </div>
-  </header>
+<div class="flex max-w-7xl mx-auto">
 
-  <div class="flex">
-
-    <!-- LEFT VK WIDGET -->
-    <aside class="w-72 p-4 border-r border-neutral-800 hidden lg:block">
-      <div id="vk_groups"></div>
-      <script>
-        VK.Widgets.Group("vk_groups", {
-          mode: 4,
-          wide: 1,
-          height: 400
-        }, 237321487);
-      </script>
-    </aside>
-
-    <!-- MAIN -->
-    <main class="flex-1 p-6">
-
-      <h2 class="text-xl mb-6">Каталог</h2>
-
-      <!-- PRODUCTS -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-        <!-- CARD -->
-        <div onclick="openProduct()" class="bg-neutral-900 p-4 rounded-2xl cursor-pointer hover:scale-105 transition">
-          <img src="https://via.placeholder.com/200" class="rounded-xl mb-3">
-          <h3 class="text-lg">Тату #1</h3>
-          <p class="text-neutral-400">100 TON</p>
-        </div>
-
+  <!-- VK LEFT -->
+  <aside class="w-72 p-4 hidden lg:block">
+    <div class="sticky top-4">
+      <div class="overflow-hidden rounded-2xl">
+        <div id="vk_groups"></div>
       </div>
-
-    </main>
-  </div>
-
-  <!-- PRODUCT PAGE -->
-  <div id="productModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center">
-
-    <div class="bg-neutral-900 p-6 rounded-2xl w-[600px]">
-
-      <button onclick="closeProduct()" class="mb-4 text-neutral-400">Назад</button>
-
-      <img src="https://via.placeholder.com/400" class="rounded-xl mb-4">
-
-      <h2 class="text-xl mb-2">Тату #1</h2>
-      <p class="mb-4 text-neutral-400">Описание товара</p>
-
-      <button class="bg-blue-600 px-4 py-2 rounded-xl mb-6">
-        Купить
-      </button>
-
-      <!-- VK COMMENTS -->
-      <div id="vk_comments"></div>
-      <script>
-        VK.Widgets.Comments("vk_comments", {limit: 20, attach: "*"});
-      </script>
-
     </div>
 
-  </div>
+    <script>
+      VK.Widgets.Group("vk_groups", {
+        mode: 4,
+        width: "250",
+        height: 400
+      }, 237321487);
+    </script>
+  </aside>
 
-  <script>
-    function openProduct() {
-      document.getElementById('productModal').classList.remove('hidden')
-    }
+  <!-- MAIN -->
+  <main class="flex-1 p-10">
+    <h2 class="text-3xl font-bold mb-4">Добро пожаловать в TaTyshop</h2>
+    <p class="text-neutral-400 mb-6">
+      Лучшие переводные татуировки
+    </p>
 
-    function closeProduct() {
-      document.getElementById('productModal').classList.add('hidden')
-    }
-  </script>
+    <a href="catalog.html" class="bg-blue-600 px-6 py-3 rounded-xl">
+      Перейти в каталог
+    </a>
+  </main>
+
+</div>
 
 </body>
 </html>
